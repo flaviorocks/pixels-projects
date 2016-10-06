@@ -1,1 +1,6 @@
-<p>This is the partial for view 1.</p>
+<h1>Projects</h1>
+<ul>
+    <li ng-repeat="project in projects">
+        <strong>Projecto {{ project.projectNumber }}:</strong>&nbsp;<span>{{ project.projectName }}</span>
+    </li>
+</ul>
