@@ -23,6 +23,7 @@ angular.module('myApp.people', ['ngRoute'])
 
     function activate() {
       vm.data = {
+        filter: '',
         loading: false,
         offset: 0,
         people: [],

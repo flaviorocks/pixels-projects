@@ -1,14 +1,17 @@
 <h1>People</h1>
+<div class="form-group">
+    <input type="text" class="form-control" placeholder="Filter" ng-model="data.filter">
+</div>
 <div class="list-group people-list" infinite-scroll="loadPeople()" infinite-scroll-distance="3">
-  <a ng-href="https://pixels.camp/{{ person.login }}" target="_blank"
-     class="list-group-item" ng-repeat="person in data.people">
-    <div class="media">
-      <div class="media-left media-top">
-        <img class="media-object" ng-src="{{ person.avatar_url }}" alt="avatar">
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">{{ person.name }}</h4>
-      </div>
-    </div>
-  </a>
+    <a ng-href="https://pixels.camp/{{ person.login }}" target="_blank"
+       class="list-group-item" ng-repeat="person in data.people | filter: data.filter">
+        <div class="media">
+            <div class="media-left media-top">
+                <img class="media-object" ng-src="{{ person.avatar_url }}" alt="avatar">
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">{{ person.name }}</h4>
+            </div>
+        </div>
+    </a>
 </div>
