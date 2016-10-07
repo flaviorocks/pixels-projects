@@ -31,7 +31,7 @@ angular.module('myApp.people', ['ngRoute'])
     }
 
     function getPeople(offset, pageSize) {
-      var url = 'https://api.pixels.camp/users/';
+      var url = 'https://crossorigin.me/https://api.pixels.camp/users/';
 
       offset = offset || 0;
       pageSize = pageSize || peopleConfig.pageSize;
