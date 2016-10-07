@@ -3,8 +3,9 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ngRoute',
+  'infinite-scroll',
   'myApp.projects',
-  'myApp.view2',
+  'myApp.people',
   'myApp.version'
 ])
   .constant('underscore', _)
