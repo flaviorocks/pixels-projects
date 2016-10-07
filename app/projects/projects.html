@@ -1,6 +1,8 @@
 <h1>Projects</h1>
-<ul class="list-group">
-    <li class="list-group-item" ng-repeat="project in projects">
-        <strong>Projecto {{ project.projectNumber }}:</strong>&nbsp;<span>{{ project.projectName }}</span>
-    </li>
-</ul>
+<div class="list-group">
+    <a ng-href="{{ project.html_url }}" target="_blank" class="list-group-item" ng-repeat="project in projects">
+        <strong>Projecto {{ project.projectNumber }}:</strong>
+        &nbsp;
+        <span>{{ project.projectName }}</span>
+    </a>
+</div>
