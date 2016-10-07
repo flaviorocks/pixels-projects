@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
+angular.module('myApp.projects', ['ngRoute'])
 
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/projects', {
-      templateUrl: 'view1/view1.html',
-      controller:  'View1Ctrl'
+      templateUrl: 'app/projects/projects.html',
+      controller:  'ProjectsCtrl'
     });
   }])
 
-  .controller('View1Ctrl', ['$http', '$scope', 'underscore', function ($http, $scope, underscore) {
+  .controller('ProjectsCtrl', ['$http', '$scope', 'underscore', function ($http, $scope, underscore) {
 
     var vm = $scope;
 
@@ -35,10 +35,13 @@ angular.module('myApp.view1', ['ngRoute'])
               var upDatedItem = item,
                 nameSplit = item.name.split('-');
 
-                upDatedItem.projectNumber = nameSplit[0].split('_')[1];
+                upDatedItem.projectNumber = parseInt(nameSplit[0].split('_')[1]);
                 upDatedItem.projectName = nameSplit[1].split('.')[0].split('_').join(' ');
 
               return upDatedItem;
+            })
+            .sortBy(function(item){
+              return item.projectNumber;
             })
             .value();
         });
